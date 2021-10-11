@@ -6,13 +6,17 @@ let elNavItem2 = document.querySelector('.nav__item:nth-child(2)');
 let elPlusBtn = document.querySelector('.nav__item-plus');
 let elPlusBtn2 = document.querySelector('.nav__item-plus-sec');
 
-elMenuBtn.addEventListener('click' , function(){
+elMenuBtn.addEventListener('click' , () => {
   elNav.classList.toggle('open');
   elMenuSpan.classList.toggle('exit')
 })
-elPlusBtn.addEventListener('click' , function(){
+elPlusBtn.addEventListener('click' , () => {
   elNavItem.classList.toggle('open-nav');
 })
-elPlusBtn2.addEventListener('click' , function(){
+elPlusBtn2.addEventListener('click' , () => {
   elNavItem2.classList.toggle('open-nav');
+})
+window.addEventListener("scroll" , () => {
+  let header = document.querySelector(".site-header");
+  header.classList.toggle("fixed", window.scrollY > 0);
 })
