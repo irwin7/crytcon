@@ -120,11 +120,13 @@ a{
   opacity: 0;
   top: 90px;
   transition: all 0.5s ease;
+  z-index: -1;
 }
 .nav__item:first-child:hover .nav__div,
 .nav__item:nth-child(2):hover .nav__div{
   top: 60px;
   opacity: 1;
+  z-index: 1;
 }
 .pop-up__list {
   overflow: hidden;
@@ -250,7 +252,9 @@ a{
 }
 @media only screen and (min-width: 768px) and (max-width : 996px){
   .container {
-    max-width: 720px;
+    min-width: 720px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   body{
     overflow-y: hidden;
@@ -298,14 +302,14 @@ a{
   .nav__aroow{
     display: none;
   }
-  .nav__item-plus{
+  .plus{
     width: 18px;
     height: 18px;
     position: absolute;
     right: 40px;
-    top: 5px;
+    top: 15px;
   }
-  .nav__item-plus::before{
+  .plus::before{
     content: "";
     position: absolute;
     width: 18px;
@@ -313,7 +317,7 @@ a{
     background-color: #fff;
     top: 50%;
   }
-  .nav__item-plus::after{
+  .plus::after{
     content: "";
     position: absolute;
     width: 18px;
@@ -322,13 +326,27 @@ a{
     top: 50%;
     transform: rotate(90deg);
   }
-
-
+  .plus::after{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background-color: #fff;
+    top: 50%;
+    transform: rotate(90deg);
+    transition: all 0.4s ease;
+  }
+  .open-nav .plus::after{
+    transform: rotate(0deg);
+  }
+  .nav__item:hover .nav__link{
+    color: #fff;
+  }
   .open-nav .nav__div{
     display: block;
   }
   .open-nav.nav__item{
-    height: 125px;
+    height: auto;
   }
   .nav__div {
     display: none;
@@ -421,14 +439,14 @@ a{
   .nav__aroow{
     display: none;
   }
-  .nav__item-plus{
+  .plus{
     width: 18px;
     height: 18px;
     position: absolute;
     right: 40px;
-    top: 5px;
+    top: 15px;
   }
-  .nav__item-plus::before{
+  .plus::before{
     content: "";
     position: absolute;
     width: 18px;
@@ -436,7 +454,7 @@ a{
     background-color: #fff;
     top: 50%;
   }
-  .nav__item-plus::after{
+  .plus::after{
     content: "";
     position: absolute;
     width: 18px;
@@ -445,13 +463,27 @@ a{
     top: 50%;
     transform: rotate(90deg);
   }
-
-
+  .plus::after{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background-color: #fff;
+    top: 50%;
+    transform: rotate(90deg);
+    transition: all 0.4s ease;
+  }
+  .open-nav .plus::after{
+    transform: rotate(0deg);
+  }
+  .nav__item:hover .nav__link{
+    color: #fff;
+  }
   .open-nav .nav__div{
     display: block;
   }
   .open-nav.nav__item{
-    height: 125px;
+    height: auto;
   }
   .nav__div {
     display: none;
